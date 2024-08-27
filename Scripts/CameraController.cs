@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 touchStart;
 
-    public float initialOrthographicSize = 10f; // Adjust this value as needed
+    public float initialOrthographicSize = 10f; 
 
     void Start()
     {
@@ -32,13 +32,13 @@ public class CameraController : MonoBehaviour
         float newSize = Mathf.Clamp(Camera.main.orthographicSize - zoomAmount, minZoom, maxZoom);
         Camera.main.orthographicSize = newSize;
 
-        // Right-click to start panning
+        
         if (Input.GetMouseButtonDown(1))
         {
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
-        // Pan camera while right mouse button is held down
+        
         if (Input.GetMouseButton(1))
         {
             Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
